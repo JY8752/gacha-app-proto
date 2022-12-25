@@ -43,7 +43,7 @@ fi
 
 # 差分があればコミットし直す
 if [ `git status -s | wc -l` -gt 0 ]; then
-  git add ./doc
+  git add ./docs
   git commit -m 'update document'
   git push --push-option=ci.skip origin $CI_COMMIT_REF_NAME
   
