@@ -36,6 +36,5 @@ jobs:
       # 変更ファイルがあればドキュメント更新を実行する
       - name: Run
         # if: steps.changed-files.outputs.any_changed == 'true'
-        working-directory: .github/script
-        run: ./generate-document.sh
+        run: ./.github/script/generate-document.sh
 
