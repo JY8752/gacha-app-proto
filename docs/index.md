@@ -6,6 +6,9 @@
 - [user/user.proto](#user_user-proto)
     - [CreateRequest](#user-CreateRequest)
     - [CreateResponse](#user-CreateResponse)
+    - [Item](#user-Item)
+    - [ListUserItemsRequest](#user-ListUserItemsRequest)
+    - [ListUserItemsResponse](#user-ListUserItemsResponse)
   
     - [User](#user-User)
   
@@ -28,7 +31,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
+| name | [string](#string) |  | 氏名 |
 
 
 
@@ -43,9 +46,56 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| id | [string](#string) |  | ユーザーid |
+| name | [string](#string) |  | ユーザー氏名 |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | ユーザー作成日 |
+
+
+
+
+
+
+<a name="user-Item"></a>
+
+### Item
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_id | [string](#string) |  | アイテムID |
+| name | [string](#string) |  | アイテム名 |
+| count | [int32](#int32) |  | アイテム所持数 |
+
+
+
+
+
+
+<a name="user-ListUserItemsRequest"></a>
+
+### ListUserItemsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  | ユーザーid |
+
+
+
+
+
+
+<a name="user-ListUserItemsResponse"></a>
+
+### ListUserItemsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [Item](#user-Item) | repeated | ユーザー所持アイテム一覧 |
 
 
 
@@ -65,7 +115,8 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Create | [CreateRequest](#user-CreateRequest) | [CreateResponse](#user-CreateResponse) |  |
+| Create | [CreateRequest](#user-CreateRequest) | [CreateResponse](#user-CreateResponse) | ユーザーを新規で作成する |
+| ListUserItems | [ListUserItemsRequest](#user-ListUserItemsRequest) | [ListUserItemsResponse](#user-ListUserItemsResponse) | ユーザーが所持しているアイテム一覧を取得する |
 
  
 

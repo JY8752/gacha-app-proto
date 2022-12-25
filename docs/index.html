@@ -186,6 +186,18 @@
                   <a href="#user.CreateResponse"><span class="badge">M</span>CreateResponse</a>
                 </li>
               
+                <li>
+                  <a href="#user.Item"><span class="badge">M</span>Item</a>
+                </li>
+              
+                <li>
+                  <a href="#user.ListUserItemsRequest"><span class="badge">M</span>ListUserItemsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#user.ListUserItemsResponse"><span class="badge">M</span>ListUserItemsResponse</a>
+                </li>
+              
               
               
               
@@ -222,7 +234,7 @@
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>氏名 </p></td>
                 </tr>
               
             </tbody>
@@ -246,21 +258,107 @@
                   <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>ユーザーid </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>ユーザー氏名 </p></td>
                 </tr>
               
                 <tr>
                   <td>created_at</td>
                   <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>ユーザー作成日 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.Item">Item</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>item_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>アイテムID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>アイテム名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>アイテム所持数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.ListUserItemsRequest">ListUserItemsRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>ユーザーid </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="user.ListUserItemsResponse">ListUserItemsResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>items</td>
+                  <td><a href="#user.Item">Item</a></td>
+                  <td>repeated</td>
+                  <td><p>ユーザー所持アイテム一覧 </p></td>
                 </tr>
               
             </tbody>
@@ -288,7 +386,14 @@
                 <td>Create</td>
                 <td><a href="#user.CreateRequest">CreateRequest</a></td>
                 <td><a href="#user.CreateResponse">CreateResponse</a></td>
-                <td><p></p></td>
+                <td><p>ユーザーを新規で作成する</p></td>
+              </tr>
+            
+              <tr>
+                <td>ListUserItems</td>
+                <td><a href="#user.ListUserItemsRequest">ListUserItemsRequest</a></td>
+                <td><a href="#user.ListUserItemsResponse">ListUserItemsResponse</a></td>
+                <td><p>ユーザーが所持しているアイテム一覧を取得する</p></td>
               </tr>
             
           </tbody>
