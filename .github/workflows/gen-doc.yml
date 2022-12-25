@@ -32,7 +32,7 @@ jobs:
       - name: Add Permision
         # if: steps.changed-files.outputs.any_changed == 'true'
         working-directory: .github/script
-        run: chmod a+x generate-documnet.sh
+        run: chmod a+x generate-document.sh
       # 変更ファイルがあればドキュメント更新を実行する
       - name: Run
         # if: steps.changed-files.outputs.any_changed == 'true'
