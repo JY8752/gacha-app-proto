@@ -11,31 +11,24 @@ sudo mv protoc3/include/* /usr/local/include/
 # protoc-gen-docのインストール
 go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
 
-# sshのセットアップ
-# mkdir -p ~/.ssh
-# chmod 700 ~/.ssh
-# ssh-keyscan -H "$CI_SERVER_HOST" >> ~/.ssh/known_hosts
-# eval "$(ssh-agent -s)"
-# echo "$SSH_PRIVATE_KEY" | ssh-add - > /dev/null
-
 # gitのセットアップ
 git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 # docディレクトリがなければ作る
-if [ ! -d ./doc ]; then
-  mkdir ./doc
+if [ ! -d ./docs ]; then
+  mkdir ./docs
 fi
 
 # ドキュメント作成(markdownとhtmlの2種類を生成)
 protoc \
-  --doc_out=./doc \
+  --doc_out=./docs \
   --doc_opt=html,index.html \
   ./**/*.proto
 
 protoc \
-  --doc_out=./doc \
+  --doc_out=./docs \
   --doc_opt=markdown,index.md \
   ./**/*.proto
 
