@@ -31,11 +31,11 @@ jobs:
       # 実行権限付与
       - name: Add Permision
         # if: steps.changed-files.outputs.any_changed == 'true'
-        working-directory: .github/workflows/script
+        working-directory: .github/script
         run: chmod a+x generate-documnet.sh
       # 変更ファイルがあればドキュメント更新を実行する
       - name: Run
         # if: steps.changed-files.outputs.any_changed == 'true'
-        working-directory: .github/workflows/script
+        working-directory: .github/script
         run: generate-document.sh
 
