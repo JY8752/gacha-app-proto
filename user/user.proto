@@ -8,6 +8,7 @@ import "google/protobuf/timestamp.proto";
 
 // ユーザー関係の処理
 // test
+// test
 service User {
   rpc Create(CreateRequest) returns (CreateResponse);
 }
