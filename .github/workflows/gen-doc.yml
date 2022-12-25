@@ -37,5 +37,5 @@ jobs:
       - name: Run
         # if: steps.changed-files.outputs.any_changed == 'true'
         working-directory: .github/script
-        run: generate-document.sh
+        run: ./generate-document.sh
 
