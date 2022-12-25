@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if type "clang-format" > /dev/null 2>&1; then
+  echo "Execute clang-format"
+  find . -name "*.proto" | xargs clang-format -i
+else
+  echo "Not exist clang-format"
+  exit 1
+fi

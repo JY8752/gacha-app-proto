@@ -1,4 +1,4 @@
-name: Generate Document
+name: Generate Document And Format
 
 on: 
   push:
@@ -9,32 +9,35 @@ jobs:
   generate-doc:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: echo $GITHUB_WORKSPACE
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         # 変更検知するのに前回の履歴も取得
-        # with:
-          # fetch-depth: 2
+        with:
+          fetch-depth: 2
       # 変更ファイルを取得
-      # - name: Get changed files
-      #   id: changed-files
-      #   uses: tj-actions/changed-files@v35
-      #   with:
-      #     files: |
-      #       **/*.proto
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            **/*.proto
       # goのセットアップ
       - name: Set up golang
-        # if: steps.changed-files.outputs.any_changed == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-go@v3
         with:
           go-version: '>=1.18.4'
       # 実行権限付与
       - name: Add Permision
-        # if: steps.changed-files.outputs.any_changed == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true'
         working-directory: .github/script
         run: chmod a+x generate-document.sh
       # 変更ファイルがあればドキュメント更新を実行する
       - name: Run
-        # if: steps.changed-files.outputs.any_changed == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: ./.github/script/generate-document.sh
-
+  clang-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run
+        run: ./.github/script/clang-format.sh
