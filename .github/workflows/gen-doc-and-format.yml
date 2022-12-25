@@ -39,5 +39,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      # 実行権限付与
+      - name: Add Permision
+        working-directory: .github/script
+        run: chmod a+x clang-format.sh
+      # フォーマット実行
       - name: Run
         run: ./.github/script/clang-format.sh
