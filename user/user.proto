@@ -8,15 +8,33 @@ import "google/protobuf/timestamp.proto";
 
 // ユーザー関係の処理
 service User {
+  // ユーザーを新規で作成する
   rpc Create(CreateRequest) returns (CreateResponse);
+
+  // ユーザーが所持しているアイテム一覧を取得する
+  rpc ListUserItems(ListUserItemsRequest) returns (ListUserItemsResponse);
 }
 
 message CreateRequest {
-  string name = 1;
+  string name = 1;  // 氏名
 }
 
 message CreateResponse {
-  string                    id         = 1;
-  string                    name       = 2;
-  google.protobuf.Timestamp created_at = 3;
+  string                    id         = 1;  // ユーザーid
+  string                    name       = 2;  // ユーザー氏名
+  google.protobuf.Timestamp created_at = 3;  // ユーザー作成日
+}
+
+message ListUserItemsRequest {
+  string user_id = 1;  // ユーザーid
+}
+
+message ListUserItemsResponse {
+  repeated Item items = 1;  // ユーザー所持アイテム一覧
+}
+
+message Item {
+  string item_id = 1;  // アイテムID
+  string name    = 2;  // アイテム名
+  int32  count   = 3;  // アイテム所持数
 }
