@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc";
+
+package user;
+
+import "google/protobuf/timestamp.proto";
+
+service User {
+  rpc Create(CreateRequest) returns (CreateResponse);
+}
+
+message CreateRequest {
+  string name = 1;
+}
+
+message CreateResponse {
+  string                    id         = 1;
+  string                    name       = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
