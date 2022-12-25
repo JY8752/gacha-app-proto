@@ -32,5 +32,6 @@ jobs:
       # 変更ファイルがあればドキュメント更新を実行する
       - name: Run
         if: steps.changed-files-specific.outputs.any_changed == 'true'
-        run: ../script/generate-document.sh
+        working-directory: ./.github/workflows/script
+        run: generate-document.sh
 
