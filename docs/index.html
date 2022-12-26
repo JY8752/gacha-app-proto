@@ -175,6 +175,44 @@
         
           
           <li>
+            <a href="#gacha%2fgacha.proto">gacha/gacha.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#gacha.BuyRequest"><span class="badge">M</span>BuyRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#gacha.BuyResponse"><span class="badge">M</span>BuyResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#gacha.Gacha"><span class="badge">S</span>Gacha</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#item%2fitem.proto">item/item.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#item.Item"><span class="badge">M</span>Item</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#user%2fuser.proto">user/user.proto</a>
             <ul>
               
@@ -184,10 +222,6 @@
               
                 <li>
                   <a href="#user.CreateResponse"><span class="badge">M</span>CreateResponse</a>
-                </li>
-              
-                <li>
-                  <a href="#user.Item"><span class="badge">M</span>Item</a>
                 </li>
               
                 <li>
@@ -212,6 +246,139 @@
       </ul>
     </div>
 
+    
+      
+      <div class="file-heading">
+        <h2 id="gacha/gacha.proto">gacha/gacha.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="gacha.BuyRequest">BuyRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>ユーザーID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="gacha.BuyResponse">BuyResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>item</td>
+                  <td><a href="#item.Item">item.Item</a></td>
+                  <td></td>
+                  <td><p>ガチャで当選したアイテム </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="gacha.Gacha">Gacha</h3>
+        <p>ガチャ関係の処理</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Buy</td>
+                <td><a href="#gacha.BuyRequest">BuyRequest</a></td>
+                <td><a href="#gacha.BuyResponse">BuyResponse</a></td>
+                <td><p>ガチャを購入する</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="item/item.proto">item/item.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="item.Item">Item</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>item_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>アイテムID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>アイテム名 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>アイテム所持数 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
     
       
       <div class="file-heading">
@@ -282,44 +449,6 @@
 
         
       
-        <h3 id="user.Item">Item</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>item_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>アイテムID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>アイテム名 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>アイテム所持数 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="user.ListUserItemsRequest">ListUserItemsRequest</h3>
         <p></p>
 
@@ -356,7 +485,7 @@
               
                 <tr>
                   <td>items</td>
-                  <td><a href="#user.Item">Item</a></td>
+                  <td><a href="#item.Item">item.Item</a></td>
                   <td>repeated</td>
                   <td><p>ユーザー所持アイテム一覧 </p></td>
                 </tr>

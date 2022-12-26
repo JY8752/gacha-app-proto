@@ -3,16 +3,113 @@
 
 ## Table of Contents
 
+- [gacha/gacha.proto](#gacha_gacha-proto)
+    - [BuyRequest](#gacha-BuyRequest)
+    - [BuyResponse](#gacha-BuyResponse)
+  
+    - [Gacha](#gacha-Gacha)
+  
+- [item/item.proto](#item_item-proto)
+    - [Item](#item-Item)
+  
 - [user/user.proto](#user_user-proto)
     - [CreateRequest](#user-CreateRequest)
     - [CreateResponse](#user-CreateResponse)
-    - [Item](#user-Item)
     - [ListUserItemsRequest](#user-ListUserItemsRequest)
     - [ListUserItemsResponse](#user-ListUserItemsResponse)
   
     - [User](#user-User)
   
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="gacha_gacha-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## gacha/gacha.proto
+
+
+
+<a name="gacha-BuyRequest"></a>
+
+### BuyRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  | ユーザーID |
+
+
+
+
+
+
+<a name="gacha-BuyResponse"></a>
+
+### BuyResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item | [item.Item](#item-Item) |  | ガチャで当選したアイテム |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="gacha-Gacha"></a>
+
+### Gacha
+ガチャ関係の処理
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Buy | [BuyRequest](#gacha-BuyRequest) | [BuyResponse](#gacha-BuyResponse) | ガチャを購入する |
+
+ 
+
+
+
+<a name="item_item-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## item/item.proto
+
+
+
+<a name="item-Item"></a>
+
+### Item
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_id | [string](#string) |  | アイテムID |
+| name | [string](#string) |  | アイテム名 |
+| count | [int32](#int32) |  | アイテム所持数 |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
@@ -55,23 +152,6 @@
 
 
 
-<a name="user-Item"></a>
-
-### Item
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| item_id | [string](#string) |  | アイテムID |
-| name | [string](#string) |  | アイテム名 |
-| count | [int32](#int32) |  | アイテム所持数 |
-
-
-
-
-
-
 <a name="user-ListUserItemsRequest"></a>
 
 ### ListUserItemsRequest
@@ -95,7 +175,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [Item](#user-Item) | repeated | ユーザー所持アイテム一覧 |
+| items | [item.Item](#item-Item) | repeated | ユーザー所持アイテム一覧 |
 
 
 
