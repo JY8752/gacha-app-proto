@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc";
+
+package item;
+
+message Item {
+  string item_id = 1;  // アイテムID
+  string name    = 2;  // アイテム名
+  int32  count   = 3;  // アイテム所持数
+}

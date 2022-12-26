@@ -4,6 +4,8 @@ option go_package = "pkg/grpc";
 
 package user;
 
+import "item/item.proto";
+
 import "google/protobuf/timestamp.proto";
 
 // ユーザー関係の処理
@@ -30,11 +32,5 @@ message ListUserItemsRequest {
 }
 
 message ListUserItemsResponse {
-  repeated Item items = 1;  // ユーザー所持アイテム一覧
-}
-
-message Item {
-  string item_id = 1;  // アイテムID
-  string name    = 2;  // アイテム名
-  int32  count   = 3;  // アイテム所持数
+  repeated item.Item items = 1;  // ユーザー所持アイテム一覧
 }

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc";
+
+package gacha;
+
+import "item/item.proto";
+
+// ガチャ関係の処理
+service Gacha {
+  // ガチャを購入する
+  rpc Buy(BuyRequest) returns (BuyResponse);
+}
+
+message BuyRequest {
+  string user_id = 1;  // ユーザーID
+}
+
+message BuyResponse {
+  item.Item item = 1;  // ガチャで当選したアイテム
+}
