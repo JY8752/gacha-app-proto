@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "pkg/grpc";
+option go_package = "JY8752/gacha-app/pkg/grpc/user";
 
 package user;
 
