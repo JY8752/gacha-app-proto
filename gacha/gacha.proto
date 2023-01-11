@@ -13,7 +13,8 @@ service Gacha {
 }
 
 message BuyRequest {
-  string user_id = 1;  // ユーザーID
+  string user_id  = 1;  // ユーザーID
+  string gacha_id = 2;  // ガチャID
 }
 
 message BuyResponse {
