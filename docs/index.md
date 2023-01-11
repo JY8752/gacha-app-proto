@@ -40,6 +40,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | user_id | [string](#string) |  | ユーザーID |
+| gacha_id | [string](#string) |  | ガチャID |
 
 
 
